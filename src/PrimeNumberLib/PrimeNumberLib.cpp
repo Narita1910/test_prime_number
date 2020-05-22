@@ -1,10 +1,5 @@
-// PrimeNumberLib.cpp : Defines the functions for the static library.
-//
-
-#include "pch.h"
-#include "framework.h"
+﻿#include "pch.h"
 #include "PrimeNumberLib.h"
-
 
 bool is_prime_number(int number)
 {
@@ -13,9 +8,13 @@ bool is_prime_number(int number)
 	}
 
 	int v = 2;
-	while (v * v <= number) {
-		if (number % v++ == 0) return false;
-	};
+	
+	for (int i = v;i < number;++i) {
+		if (number % i == 0) {
+			return false;
+		}
+	}
 
 	return true;
+	
 }
